@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+"""Convenience executable wrapper for V.I.C.T.O.R."""
+
+import os
+import sys
+from pathlib import Path
+
+# Auto-detect virtual environment with dependencies if running under system python
+candidate_venvs = [
+    Path(__file__).resolve().parent / ".venv",
+    Path.home() / ".local/share/piper/venv",
+    Path.home() / ".venv",
+]
+
+for venv in candidate_venvs:
+    py_bin = venv / "bin/python"
+    if py_bin.exists() and Path(sys.prefix).resolve() != venv.resolve():
+        try:
+            import numpy
+        except ImportError:
+            os.execv(str(py_bin), [str(py_bin)] + sys.argv)
+
+# Add src to sys.path
+root_dir = Path(__file__).resolve().parent
+src_dir = root_dir / "src"
+if str(src_dir) not in sys.path:
+    sys.path.insert(0, str(src_dir))
+
+from victor.cli.app import main
+
+if __name__ == "__main__":
+    sys.exit(main())

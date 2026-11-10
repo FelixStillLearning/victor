@@ -1,0 +1,19 @@
+[plugin]
+name = "vision"
+version = "0.1.0"
+description = "Semantic active window inspection via AT-SPI and bounded screenshot fallback"
+author = "Felix Angga Resky"
+
+[dependencies]
+system_packages = ["at-spi2-core", "grim", "slurp"]
+python_packages = ["pyatspi", "pillow"]
+
+[triggers]
+keywords = [
+    "read screen",
+    "baca layar",
+    "what is on my screen",
+    "summarize this document",
+    "ringkas dokumen ini",
+    "jelaskan error",
+]

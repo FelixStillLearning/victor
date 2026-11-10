@@ -1,0 +1,22 @@
+[plugin]
+name = "hyprland"
+version = "0.1.0"
+description = "Hyprland Wayland compositor workspace and window dispatcher"
+author = "Felix Angga Resky"
+
+[dependencies]
+system_packages = ["hyprland", "quickshell"]
+python_packages = []
+
+[triggers]
+keywords = [
+    "workspace",
+    "desktop",
+    "close window",
+    "tutup aplikasi",
+    "screenshot",
+    "wallpaper",
+    "lock",
+    "buka",
+    "open",
+]

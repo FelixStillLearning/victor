@@ -1,0 +1,18 @@
+[plugin]
+name = "history"
+version = "0.1.0"
+description = "Auditable command logging and conversational query recall"
+author = "Felix Angga Resky"
+
+[dependencies]
+system_packages = []
+python_packages = ["sqlite3"]
+
+[triggers]
+keywords = [
+    "history",
+    "riwayat",
+    "what did i ask",
+    "tadi aku tanya apa",
+    "tadi aku minta apa",
+]

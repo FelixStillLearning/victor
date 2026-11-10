@@ -1,0 +1,18 @@
+[plugin]
+name = "clipboard"
+version = "0.1.0"
+description = "Wayland clipboard text processing, formatting, and translation"
+author = "Felix Angga Resky"
+
+[dependencies]
+system_packages = ["wl-clipboard"]
+python_packages = []
+
+[triggers]
+keywords = [
+    "clipboard",
+    "papan klip",
+    "format clipboard",
+    "baca clipboard",
+    "terjemahkan clipboard",
+]

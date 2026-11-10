@@ -1,0 +1,22 @@
+[plugin]
+name = "media"
+version = "0.1.0"
+description = "MPRIS media player control and Spotify search integration"
+author = "Felix Angga Resky"
+
+[dependencies]
+system_packages = ["playerctl", "wireplumber"]
+python_packages = ["requests"]
+
+[triggers]
+keywords = [
+    "play",
+    "putar",
+    "pause",
+    "jeda",
+    "next track",
+    "previous track",
+    "skip",
+    "volume up",
+    "volume down",
+]

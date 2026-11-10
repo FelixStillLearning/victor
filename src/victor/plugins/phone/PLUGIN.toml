@@ -1,0 +1,17 @@
+[plugin]
+name = "phone"
+version = "0.1.0"
+description = "KDE Connect remote device ringing and battery monitoring"
+author = "Felix Angga Resky"
+
+[dependencies]
+system_packages = ["kdeconnect"]
+python_packages = []
+
+[triggers]
+keywords = [
+    "find my phone",
+    "cari hp",
+    "where is my phone",
+    "ring my phone",
+]

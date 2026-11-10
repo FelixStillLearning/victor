@@ -1,0 +1,17 @@
+[plugin]
+name = "tasks"
+version = "0.1.0"
+description = "Todoist task management and synchronization"
+author = "Felix Angga Resky"
+
+[dependencies]
+system_packages = []
+python_packages = ["requests"]
+
+[triggers]
+keywords = [
+    "tambah tugas",
+    "add task",
+    "buat tugas",
+    "todo",
+]

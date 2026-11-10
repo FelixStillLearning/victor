@@ -1,0 +1,18 @@
+[plugin]
+name = "notes"
+version = "0.1.0"
+description = "Rapid daily notes appending for Obsidian vaults"
+author = "Felix Angga Resky"
+
+[dependencies]
+system_packages = []
+python_packages = []
+
+[triggers]
+keywords = [
+    "catat",
+    "catet",
+    "note",
+    "take a note",
+    "tulis catatan",
+]

@@ -1,0 +1,90 @@
+# V.I.C.T.O.R. Configuration Specification
+# Place active configuration in ~/.config/victor/config.toml or ./config/config.toml
+
+[user]
+name = "Felix"
+honorific = "sir"
+persona = "butler"
+
+[location]
+city = "Jakarta"
+
+[engines]
+llm = "claude_cli"       # Options: "claude_cli", "ollama", "openai_compat"
+stt = "faster_whisper"   # Options: "faster_whisper", "whisper_cpp"
+tts = "piper"            # Options: "piper"
+wakeword = "openwakeword"# Options: "openwakeword"
+
+[engines.faster_whisper]
+model_size = "small"
+device = "cpu"
+compute_type = "int8"
+threads = 8
+
+[engines.piper]
+voice_model = "~/.local/share/piper/voices/jarvis-high.onnx"
+audio_filter = "highpass=f=120,aecho=0.8:0.6:40|70:0.25|0.15,volume=1.2"
+
+[engines.openwakeword]
+model = "hey_jarvis"
+threshold = 0.5
+pre_threshold = 0.15
+
+[engines.claude_cli]
+model = "haiku"
+executable = "claude"
+
+[engines.ollama]
+host = "http://localhost:11434"
+model = "qwen2.5:3b"
+timeout_seconds = 30
+
+[engines.openai_compat]
+base_url = "https://api.groq.com/openai/v1"
+api_key = ""
+model = "llama-3.1-8b-instant"
+
+[plugins]
+enabled = [
+    "hyprland",
+    "media",
+    "tasks",
+    "notes",
+    "phone",
+    "vision",
+    "clipboard",
+    "history",
+]
+
+[plugins.hyprland]
+enable_dynamic_island = true
+dynamic_island_component = "jarvis-island"
+
+[plugins.media]
+spotify_client_id = ""
+spotify_client_secret = ""
+
+[plugins.tasks.todoist]
+api_token = ""
+
+[plugins.notes.obsidian]
+vault_path = ""
+daily_notes_dir = "Daily Notes"
+
+[plugins.phone.kdeconnect]
+device_name = ""
+auto_ring_on_find = true
+
+[plugins.vision]
+backend = "atspi"
+fallback_screenshot = true
+screenshot_tool = "caelestia"
+
+[system_watch]
+check_interval_seconds = 5
+battery_low_thresholds = [20, 10, 5]
+phone_low_threshold = 15
+cpu_temp_max_celsius = 90
+ram_min_free_ratio = 0.07
+disk_min_free_ratio = 0.10
+quiet_hours = [22, 7]
